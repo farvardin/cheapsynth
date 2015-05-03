@@ -48,6 +48,9 @@ to less computationally demanding envelopes in Mode 0 and 2), toggles between sh
 */
 
 #include <MIDI.h>
+
+MIDI_CREATE_DEFAULT_INSTANCE();
+
 #include <MozziGuts.h>
 #include <Oscil.h> /oscSaw/ oscillator template
 #include <Line.h> // for envelope
@@ -55,7 +58,7 @@ to less computationally demanding envelopes in Mode 0 and 2), toggles between sh
 #include <tables/saw1024_int8.h> // table for Oscils to play
 #include <tables/smoothsquare8192_int8.h> // NB portamento requires table > 512 size?
 #include <mozzi_midi.h>
-#include <ADSRslow.h>
+#include "ADSRslow.h"
 #include <mozzi_fixmath.h>
 #include <LowPassFilter.h>
 #include <Portamento.h>

@@ -61,7 +61,7 @@ private:
 
 	inline
 	unsigned int convertMsecToControlSteps(unsigned int msec){
-		return (uint) (((ulong)msec*CONTROL_UPDATE_RATE)>>10); // approximate /1000 with shift
+		return (unsigned int) (((unsigned long )msec*CONTROL_UPDATE_RATE)>>10); // approximate /1000 with shift
 	}
 
 	inline
@@ -96,7 +96,7 @@ inline
 	void setTime(phase * p, unsigned int msec)
 	{
 		p->control_steps=convertMsecToControlSteps(msec);
-		p->audio_steps = (ulong) p->control_steps * AUDIO_TICKS_PER_CONTROL;
+		p->audio_steps = (unsigned long) p->control_steps * AUDIO_TICKS_PER_CONTROL;
 	}
 	
 	
